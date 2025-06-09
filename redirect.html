@@ -1,22 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Đang chuyển hướng...</title>
-  <script>
-    setTimeout(function () {
-      var referrers = [
-        "https://facebook.com",
-        "https://t.me"
-      ];
-      var randomRef = referrers[Math.floor(Math.random() * referrers.length)];
-      var targetUrl = "https://seowriting.ai";
-      var redirectLink = "https://www.google.com/url?q=" + encodeURIComponent(targetUrl) + "&sa=U&ref=" + encodeURIComponent(randomRef);
-      window.location.href = redirectLink;
-    }, 100); // Gần như tức thì
-  </script>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0e1b2c;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <p>Đang chuyển hướng đến trang đích, vui lòng chờ giây lát...</p>
+    <div>
+        <h1>Redirecting to another page...</h1>
+    </div>
+    <script>
+        let counter = localStorage.getItem('redirectCounter') || 0;
+        counter = parseInt(counter) + 1;
+        localStorage.setItem('redirectCounter', counter);
+
+        let url = "check-referrer.html";
+
+        if ((counter % 6) < 3) {
+            document.referrer = "https://facebook.com";
+        } else {
+            document.referrer = "https://t.me";
+        }
+
+        setTimeout(() => {
+            let a = document.createElement('a');
+            a.href = url;
+            a.rel = "noreferrer";
+            a.target = "_self";
+            document.body.appendChild(a);
+            a.click();
+        }, 100);
+    </script>
 </body>
 </html>
