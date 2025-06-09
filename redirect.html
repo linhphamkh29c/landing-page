@@ -1,37 +1,22 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Đang chuyển hướng...</title>
   <script>
-    const referers = [
-      "https://www.facebook.com/",
-      "https://t.me/"
-    ];
-    const randomReferer = referers[Math.floor(Math.random() * referers.length)];
-
-    const targetUrl = "https://seowriting.ai";
-
-    const form = document.createElement('form');
-    form.method = 'POST';
-    form.action = targetUrl;
-    form.style.display = 'none';
-
-    document.body.appendChild(form);
-
-    // Tạo iframe referrer giả bằng cách nhúng trang trung gian
-    const iframe = document.createElement('iframe');
-    iframe.style.display = 'none';
-    iframe.src = randomReferer;
-
-    document.body.appendChild(iframe);
-
-    setTimeout(() => {
-      window.location.href = targetUrl;
-    }, 100);
+    setTimeout(function () {
+      var referrers = [
+        "https://facebook.com",
+        "https://t.me"
+      ];
+      var randomRef = referrers[Math.floor(Math.random() * referrers.length)];
+      var targetUrl = "https://seowriting.ai";
+      var redirectLink = "https://www.google.com/url?q=" + encodeURIComponent(targetUrl) + "&sa=U&ref=" + encodeURIComponent(randomRef);
+      window.location.href = redirectLink;
+    }, 100); // Gần như tức thì
   </script>
 </head>
 <body>
-  <p>Đang chuyển đến trang web chính thức...</p>
+  <p>Đang chuyển hướng đến trang đích, vui lòng chờ giây lát...</p>
 </body>
 </html>
