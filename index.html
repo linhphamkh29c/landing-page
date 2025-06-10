@@ -93,8 +93,18 @@
 
   <script>
     function go() {
-      // Chuyển hướng qua trang redirect để xử lý giả referrer Telegram
-      window.location.href = "redirect.html";
+      const ref = document.referrer || "no referrer";
+      const ua = navigator.userAgent;
+      const scriptURL = "https://script.google.com/macros/s/AKfycbxpX9ezmTCURSl7Mjnj5LSw_paioiEMmR7gAEBLYkQCiZtwWFgv7N5b0HXOyT4ARTgI/exec";
+
+      fetch(`${scriptURL}?ref=${encodeURIComponent(ref)}&ua=${encodeURIComponent(ua)}`)
+        .then(() => {
+          window.location.href = "redirect.html";
+        })
+        .catch(() => {
+          // Redirect luôn cả khi lỗi
+          window.location.href = "redirect.html";
+        });
     }
 
     // Countdown FOMO 5 phút
@@ -111,23 +121,5 @@
     setInterval(updateTimer, 1000);
     updateTimer();
   </script>
-</body>
-<script>
-  window.onload = function() {
-    // Lấy thông tin referrer và user agent
-    const ref = document.referrer;
-    const ua = navigator.userAgent;
-
-    // Gửi thông tin đến Google Apps Script
-    fetch("https://script.google.com/macros/s/AKfycbzCXhL4w0ZC_jizDRoAKSTNFJ0mbKOlHqODA26LXTbHoTc4Oe4sq5FJVXxS_nfu0iTX/exec" + encodeURIComponent(ref) + "&ua=" + encodeURIComponent(ua))
-      .then(response => {
-        console.log("Referrer logged!");
-      })
-      .catch(error => {
-        console.error("Logging failed", error);
-      });
-  };
-</script>
-
 </body>
 </html>
