@@ -1,49 +1,18 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Redirecting...</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #0e1b2c;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Đang chuyển hướng...</title>
+  <meta name="referrer" content="no-referrer">
+  <script>
+    setTimeout(function () {
+      // Giả lập referrer bằng iframe Telegram trước khi chuyển
+      window.location.replace("https://seowriting.ai?ref=abc");
+    }, 3000);
+  </script>
 </head>
 <body>
-    <div>
-        <h1>Redirecting to another page...</h1>
-    </div>
-    <script>
-        let counter = localStorage.getItem('redirectCounter') || 0;
-        counter = parseInt(counter) + 1;
-        localStorage.setItem('redirectCounter', counter);
-
-        let url = "check-referrer.html";
-
-        if ((counter % 6) < 3) {
-            document.referrer = "https://facebook.com";
-        } else {
-            document.referrer = "https://t.me";
-        }
-
-        setTimeout(() => {
-            let a = document.createElement('a');
-            a.href = url;
-            a.rel = "noreferrer";
-            a.target = "_self";
-            document.body.appendChild(a);
-            a.click();
-        }, 100);
-    </script>
+  <iframe src="https://t.me/" style="display:none;"></iframe>
+  <p style="text-align:center; font-family:sans-serif; padding-top: 50px;">🔁 Đang chuyển đến seowriting.ai...</p>
 </body>
 </html>
