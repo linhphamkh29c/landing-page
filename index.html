@@ -119,7 +119,7 @@
     const ua = navigator.userAgent;
 
     // Gửi thông tin đến Google Apps Script
-    fetch("https://script.google.com/macros/s/AKfycbxpX9ezmTCURSl7Mjnj5LSw_paioiEMmR7gAEBLYkQCiZtwWFgv7N5b0HXOyT4ARTgI/exec?ref=" + encodeURIComponent(ref) + "&ua=" + encodeURIComponent(ua))
+    fetch("https://script.google.com/macros/s/AKfycbzCXhL4w0ZC_jizDRoAKSTNFJ0mbKOlHqODA26LXTbHoTc4Oe4sq5FJVXxS_nfu0iTX/exec" + encodeURIComponent(ref) + "&ua=" + encodeURIComponent(ua))
       .then(response => {
         console.log("Referrer logged!");
       })
