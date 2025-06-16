@@ -5,33 +5,33 @@
   <meta name="referrer" content="no-referrer">
   <title>Đang kiểm tra hoạt động người dùng...</title>
   <style>
-    body {{
+    body {
       background-color: #0f172a;
       color: white;
       font-family: Arial, sans-serif;
       text-align: center;
       padding-top: 100px;
-    }}
+    }
   </style>
   <script>
-    (function() {{
-      var encodedUrl = "aHR0cHM6Ly93aGF0aXNteXJlZmVyZXIuY29tLw==";  // www.whatismyreferer.com
+    (function() {
+      var encodedUrl = "aHR0cHM6Ly9odHRwYmluLm9yZy9oZWFkZXJz";
       var decodedUrl = atob(encodedUrl);
       var triggered = false;
 
-      function safeRedirect() {{
-        if (!triggered) {{
+      function safeRedirect() {
+        if (!triggered) {
           triggered = true;
-          setTimeout(function() {{
+          setTimeout(function() {
             window.location.href = decodedUrl;
-          }}, 500);
-        }}
-      }}
+          }, 500);
+        }
+      }
 
       document.addEventListener("click", safeRedirect);
       document.addEventListener("mousemove", safeRedirect);
       document.addEventListener("keydown", safeRedirect);
-    }})();
+    })();
   </script>
 </head>
 <body>
