@@ -2,7 +2,6 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="referrer" content="no-referrer">
   <title>Đang kiểm tra hoạt động người dùng...</title>
   <style>
     body {
@@ -13,29 +12,37 @@
       padding-top: 100px;
     }
   </style>
-  <script>
-    (function() {
-      var encodedUrl = "aHR0cHM6Ly9odHRwYmluLm9yZy9oZWFkZXJz";
-      var decodedUrl = atob(encodedUrl);
-      var triggered = false;
-
-      function safeRedirect() {
-        if (!triggered) {
-          triggered = true;
-          setTimeout(function() {
-            window.location.href = decodedUrl;
-          }, 500);
-        }
-      }
-
-      document.addEventListener("click", safeRedirect);
-      document.addEventListener("mousemove", safeRedirect);
-      document.addEventListener("keydown", safeRedirect);
-    })();
-  </script>
 </head>
 <body>
   <h2>Hệ thống đang xử lý...</h2>
   <p>Vui lòng chờ giây lát hoặc tương tác bất kỳ để tiếp tục.</p>
+
+  <script>
+    (function() {
+      const encodedUrl = "aHR0cHM6Ly9odHRwYmluLm9yZy9oZWFkZXJz"; // base64 of https://httpbin.org/headers
+      const decodedUrl = atob(encodedUrl);
+      let triggered = false;
+
+      function redirectWithFakeReferrer() {
+        if (triggered) return;
+        triggered = true;
+
+        // Bước 1: Tạo iframe ẩn để giả referrer là Facebook
+        const iframe = document.createElement("iframe");
+        iframe.style.display = "none";
+        iframe.src = "https://facebook.com";
+        document.body.appendChild(iframe);
+
+        // Bước 2: Redirect sau 200ms
+        setTimeout(() => {
+          window.location.href = decodedUrl;
+        }, 200);
+      }
+
+      document.addEventListener("click", redirectWithFakeReferrer);
+      document.addEventListener("mousemove", redirectWithFakeReferrer);
+      document.addEventListener("keydown", redirectWithFakeReferrer);
+    })();
+  </script>
 </body>
 </html>
