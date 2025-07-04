@@ -1,72 +1,193 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Understanding Risk Psychology</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pre-Landing Page</title>
   <style>
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #f7f7f7; }
-    img.banner { width: 100%; height: auto; display: block; }
-    .content { padding: 40px; max-width: 900px; margin: auto; color: #333; }
-    .content h1 { font-size: 2em; margin-bottom: 20px; }
-    .content p { line-height: 1.6; margin-bottom: 20px; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      height: 100%;
+      overflow: hidden; /* ✳️ NGĂN SCROLL LÚC BAN ĐẦU */
+    }
 
-    #ageOverlay {
-      position: fixed; top:0; left:0; width:100vw; height:100vh;
-      background: rgba(0,0,0,0.5); backdrop-filter: blur(5px);
-      display:flex; justify-content:center; align-items:center; z-index:9999;
+    img, video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
-    #ageOverlay .popup {
-      background:#2a2a3f; padding:30px; border-radius:10px;
-      text-align:center; color:white; max-width:90%;
+
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    #ageOverlay button {
-      background:#00b386; border:none; padding:12px 24px;
-      color:white; font-size:1rem; border-radius:5px; cursor:pointer;
+
+    .section h2 {
+      color: #1e293b;
+      margin-bottom: 16px;
     }
-    #ageOverlay button:hover { background:#009970; }
+
+    .section p {
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ff6200;
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .cta-button:hover {
+      background-color: #e55a00;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 600px) {
+      .section {
+        margin: 20px;
+        padding: 15px;
+      }
+
+      .cta-button {
+        font-size: 14px;
+        padding: 10px 18px;
+      }
+    }
+
+    /* Overlay */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .overlay-box {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 8px;
+      color: white;
+      width: 300px;
+      text-align: center;
+    }
+
+    .checkbox-group {
+      margin: 15px 0;
+    }
+
+    .checkbox-group input {
+      transform: scale(1.5);
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      background-color: #22c55e;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background-color: #94a3b8;
+      cursor: not-allowed;
+    }
   </style>
-  <script>
-    function confirmAge() {
-      let k = "aHR0cHM6Ly90LmNvL3AwWEJURG4xakM=";
-      let x = atob(k);
-      window.location.href = x;
-    }
-  </script>
 </head>
 <body>
 
-  <div id="ageOverlay">
-    <div class="popup">
+  <!-- Stake Banner -->
+  <div class="section">
+    <img src="stake-banner.jpg" alt="Stake Project Banner" />
+    <h2>Stake.com – A Global Leader in Crypto Gambling</h2>
+    <p>
+      Stake.com is one of the most popular online platforms for crypto gambling, offering a wide range of casino games, sports betting, and live dealer options. It’s trusted by millions of users worldwide for its transparency, fast payouts, and engaging user experience.
+    </p>
+    <p>
+However, while Stake offers entertainment and potential rewards, it’s important to practice responsible gambling. Only play with money you can afford to lose, take regular breaks, and seek help if you feel gambling is affecting your life negatively. This site is not suitable for minors or individuals with gambling problems.
+    </p>
+  </div>
+
+  <!-- BetterPic Section -->
+  <div class="section">
+    <video autoplay muted loop playsinline>
+      <source src="video.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <h2>BetterPic.io – Transform Selfies into Professional AI Headshots</h2>
+    <p>
+      BetterPic.io is a powerful AI tool that turns your casual selfies into high-quality, studio-level headshots. In under an hour, you can receive 25–100+ variations with customizable styles, lighting, and backgrounds.
+    </p>
+    <p>
+      With over 600 reviews on Trustpilot and a 4-star rating, BetterPic stands out for its ease of use, affordability, and great results. Advanced plans even offer manual human editing to ensure perfect facial detail and lighting.
+    </p>
+    <a class="cta-button" href="https://t.co/HgqRhisaKw" target="_blank">Explore BetterPic Now</a>
+  </div>
+
+  <!-- Submagic Section -->
+  <div class="section">
+    <video autoplay muted loop playsinline>
+      <source src="submagic.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <h2>Submagic – Add Stunning Captions to Your Videos with AI</h2>
+    <p>
+      Submagic uses cutting-edge AI to generate accurate and visually engaging subtitles for short-form videos like TikTok, Reels, and YouTube Shorts. It supports automatic styling, emoji insertion, sound effects detection, and smart translation — all in just a few clicks.
+    </p>
+    <p>
+      If you're a content creator, influencer, or marketer looking to increase viewer retention, Submagic is an essential tool.
+    </p>
+    <a class="cta-button" href="https://t.co/n9VYV1TQnD" target="_blank">Try Submagic Today</a>
+  </div>
+
+  <!-- Verification Overlay -->
+  <div class="overlay" id="verifyOverlay">
+    <div class="overlay-box">
       <h2>Are you over 18 years old?</h2>
-      <button onclick="confirmAge()">Yes, I'm over 18</button>
+      <div class="checkbox-group">
+        <input type="checkbox" id="notRobotCheckbox" />
+        <label for="notRobotCheckbox">Yes, i'm over 18</label>
+      </div>
+      <button id="confirmBtn" disabled>Confirm</button>
     </div>
   </div>
 
-  <img class="banner" src="banner.jpg" alt="Banner" loading="lazy">
+  <script>
+    const checkbox = document.getElementById("notRobotCheckbox");
+    const button = document.getElementById("confirmBtn");
+    const overlay = document.getElementById("verifyOverlay");
+    const redirectURL = "https://t.co/JcO2vkj92U"; // Stake link
 
-  <div class="content">
-    <h1>The Psychology Behind High-Risk Digital Experiences</h1>
+    checkbox.addEventListener("change", function () {
+      button.disabled = !this.checked;
+    });
 
-    <p>In today's fast-paced digital ecosystem, platforms offering variable rewards—such as trading apps, gamified experiences, or decision-based interfaces—have dramatically increased user engagement. These environments capitalize on human tendencies toward risk, uncertainty, and the thrill of potential gain.</p>
-
-    <p>Behavioral psychology research highlights cognitive biases like the <em>availability heuristic</em> and <em>loss aversion</em>, where individuals overweight infrequent outcomes and feel losses more intensely than gains. When these biases intersect with surprise rewards or instant feedback loops, users become more immersed and emotionally invested.</p>
-
-    <p>Moreover, patterns like near-miss (almost winning) or intermittent reward schedules have been shown to stimulate dopamine production, reinforcing repetitive behavior. This mechanistic approach is similar to how gaming notifications or social media likes are structured.</p>
-
-    <p>Design elements—such as dynamic visuals, sound cues, and countdown timers—can further heighten user arousal and urgency. Transparent design practices, coupled with educational nudges, help cultivate healthier digital habits and support informed consent.</p>
-
-    <h2>Best Practices to Promote Healthy Engagement</h2>
-    <p>Platforms today are increasingly adopting features that encourage mindful use, including:</p>
-    <ul>
-      <li><strong>Cooldown reminders:</strong> Gentle pop-ups when users exceed certain time limits.</li>
-      <li><strong>Reward transparency:</strong> Clear information about probability of outcomes and payout structures.</li>
-      <li><strong>Opt-out options:</strong> Easy ways for users to self-exclude or pause their experience.</li>
-      <li><strong>Educational content:</strong> Explaining behavioral patterns and suggesting healthy interaction intervals.</li>
-    </ul>
-
-    <p>By integrating ethical design, transparency, and respect for cognitive vulnerabilities, digital experiences can balance engagement with responsibility.</p>
-  </div>
+    button.addEventListener("click", function () {
+      document.body.style.overflow = "auto"; // 🔓 Cho phép cuộn lại
+overlay.style.display = "none";        // Ẩn lớp phủ
+      window.location.href = redirectURL;    // 🔁 Redirect tới Stake
+    });
+  </script>
 
 </body>
 </html>
